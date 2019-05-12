@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false;" lang="EN">
+	<head>
+		<link id="css" href="css/main_jobs.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/site.webmanifest">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<title>Solliciteer voor marechaussee</title>
+	</head>
+	
+	<body id="body">
+		<center id="center">
+			<div class="img">
+				<img src="../img/thumbnails/gta5rp_0.png" />
+				<p class="titel">MARECHAUSSEE</p>
+				<p class="tekst">
+					Als marechaussee zorg jij er voor dat ons land veilig blijft. Kun jij dit aan? Geef je op!
+				</p>
+			</div>
+		</center>
+		
+		<div class="smallcont">
+					<small id="color">
+						<b>VOORDAT JE DIT FORMULIER INVULT!</b></br>
+						Vragen met een <i class="fas fa-minus-circle"></i> ervoor zijn optioneel, deze mag je dus overslaan.</br>
+						Vragen met een <i class="fas fa-exclamation-circle"></i> zijn verplicht. Deze zijn niet optioneel en je mag deze vragen dus niet overslaan.
+						</br><b style="color: #e04a4a;">Doe je dat wel, dan wordt je sollicitatie niet goedgekeurd.</b>
+					</small>
+				</div>
+				
+		<div class="vraag">
+			<p id="vraagtekst"><i class="fas fa-exclamation-circle"></i> Hoe heet jij? <small>(voornaam & achternaam)</small></p>
+			<input type="text" id="name"></input>
+			<p id="vraagtekst"><i class="fas fa-exclamation-circle"></i> Hoe heet jouw karakter? <small>(voornaam & achternaam)</small></p>
+			<input type="text" id="charname"></input>
+			<p id="vraagtekst"><i class="fas fa-exclamation-circle"></i> Wat is jouw discord? <small>(discordname#0000)</small></p>
+			<input type="text" id="discord"></input>
+			<p id="vraagtekst"><i class="fas fa-minus-circle"></i> Wat is jouw email? <small>(pieterjacobs@hotmail.com)</small></p>
+			<input type="email" id="email"></input>
+			
+			<p id="vraagtekst"><i class="fas fa-exclamation-circle"></i> Ben jij 15 jaar of ouder?</p>
+			<div class="antwoordbox">
+				<input type="radio" name="solPolitie0" id="solPolitie0" value="0" hidden>
+				<label for="solPolitie0" class="switch"></label><p id="antwoord">Ja</p>
+				<input type="radio" name="solPolitie0" id="solPolitie1" value="1" hidden>
+				<label for="solPolitie1" class="switch"></label><p id="antwoord">Nee</p>
+			</div>
+			
+			<p id="vraagtekst"><i class="fas fa-exclamation-circle"></i> Heb jij al ervaring met deze baan? <small>(in-game)</small></p>
+			<div class="antwoordbox">
+				<input type="radio" name="solPolitie1" id="solPolitie2" value="0" hidden>
+				<label for="solPolitie2" class="switch"></label><p id="antwoord">Ja</p>
+				<input type="radio" name="solPolitie1" id="solPolitie3" value="1" hidden>
+				<label for="solPolitie3" class="switch"></label><p id="antwoord">Nee</p>
+			</div>
+			
+			<p id="vraagtekst"><i class="fas fa-minus-circle"></i> Heb jij al ervaring met deze baan? <small>(in het echt)</small></p>
+			<div class="antwoordbox">
+				<input type="radio" name="solPolitie2" id="solPolitie4" value="0" hidden>
+				<label for="solPolitie4" class="switch"></label><p id="antwoord">Ja</p>
+				<input type="radio" name="solPolitie2" id="solPolitie5" value="1" hidden>
+				<label for="solPolitie5" class="switch"></label><p id="antwoord">Nee</p>
+			</div>
+		</div>
+		
+		<div class="vraag">
+			<p id="vraagtekst"><i class="fas fa-exclamation-circle"></i> Wat maakt jou beter dan anderen? <small>(max 150 karakters)</small></p>
+			<textarea id="story0" maxlength="150" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+			<p id="vraagtekst"><i class="fas fa-minus-circle"></i> Wil je nog iets kwijt over jezelf? <small>(max 100 karakters)</small></p>
+			<textarea id="story1" maxlength="100" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+		</div>
+		
+		<div id="button" onclick="handIn();">Inleveren</div>
+	</body>
+	
+</html>
+
+<script>
+function navigate(url) {
+	window.location.href = url;
+}
+function handIn() {
+	var sendToMail = 'veendamrp.sollicitaties@gmail.com',
+		sendFromMail = document.getElementById('email').value;
+	var yesno0 = '[Vraag niet beantwoord. (15 jaar of ouder)]';
+	var yesno1 = '[Vraag niet beantwoord. (ervaring in-game)]';
+	var yesno2 = '[Vraag niet beantwoord. (ervaring in het echt)]';
+	var subject = "Sollicitatie%20formulier%20Marechaussee";
+	var name = "[Vraag niet beantwoord. (naam)]";
+	var charname = "[Vraag niet beantwoord. (karakter naam)]";
+	var discord = "[Vraag niet beantwoord. (discord)]";
+	var email = "";
+	var watmaaktmijbeter = "[Vraag niet beantwoord. (wat maakt mij beter)]";
+	var extra = "Ik wil niks anders over mezelf kwijt.";
+	
+	if (document.getElementById('name').value) {
+		name = document.getElementById('name').value+".";
+	}
+	if (document.getElementById('charname').value) {
+		charname = document.getElementById('charname').value+".";
+	}
+	if (document.getElementById('discord').value) {
+		discord = document.getElementById('discord').value;
+	}
+	if (document.getElementById('email').value) {
+		email = "Mijn email is " + document.getElementById('email').value+" %0D";
+	}
+	if (document.getElementById('story0').value) {
+		watmaaktmijbeter = document.getElementById('story0').value;
+	}
+	if (document.getElementById('story1').value) {
+		extra = document.getElementById('story1').value;
+	}
+	
+	if (document.getElementById('solPolitie0').checked == true || document.getElementById('solPolitie1').checked == true) {
+		if (document.getElementById('solPolitie0').checked == true) { yesno0 = 'Ja ik ben 15 jaar of ouder.'; } else
+		if (document.getElementById('solPolitie1').checked == true) { yesno0 = 'Nee ik ben niet 15 jaar of ouder.'; }
+	}
+	if (document.getElementById('solPolitie2').checked == true || document.getElementById('solPolitie3').checked == true) {
+		if (document.getElementById('solPolitie2').checked == true) { yesno1 = 'Ik heb ervaring met deze baan in-game.'; } else
+		if (document.getElementById('solPolitie3').checked == true) { yesno1 = 'Ik heb geen ervaring met deze baan in-game.'; }
+	}
+	if (document.getElementById('solPolitie4').checked == true || document.getElementById('solPolitie5').checked == true) {
+		if (document.getElementById('solPolitie4').checked == true) { yesno2 = 'Ik heb ervaring met deze baan in het echt.'; } else
+		if (document.getElementById('solPolitie5').checked == true) { yesno2 = 'Ik heb geen ervaring met deze baan in het echt.'; }
+	}
+	
+	var body = 
+	"Hallo,%0D%0DMijn naam is "+name+"%0DIk wil graag solliciteren voor marechaussee.%0D%0D"+yesno0+"%0DMijn discord is "+discord+"%0D"+email+"Mijn karakter heet "+charname;
+	body = body+"%0D%0DWat maakt mij beter dan de anderen?%0D"+watmaaktmijbeter;
+	body = body+"%0D%0D"+extra;
+	
+	body = body+"%0D%0DGELIEVE DEZE MAIL NIET TE VERANDEREN. MOCHT U DIT WEL DOEN DAN VERKLAART U DIT SOLLICITATIE FORMULIER ONGELDIG.%0D";
+	var link = "mailto:"+sendToMail+"?subject="+subject+"&cc"+sendFromMail+"&body="+body;
+	window.location.href = link;
+	
+	setTimeout(function(){ window.location.replace('bedankt.html') }, 1000);
+}
+
+
+$(window).resize(function(){
+    window.resizeTo(520,900);
+  return false;
+});
+
+//window.onload = getColorMode();
+</script>

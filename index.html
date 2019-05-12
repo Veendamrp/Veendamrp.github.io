@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false;" lang="EN">
+	<head>
+		<link id="css" href="css/main.css" rel="stylesheet" type="text/css">
+		<link id="css" href="css/loader.css" rel="stylesheet" type="text/css">
+		<link id="css" href="css/jobs.css" rel="stylesheet" type="text/css">
+		<link id="css" href="css/activityfeed.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/site.webmanifest">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		
+		<title>Home</title>
+	</head>
+	
+	<body id="body">
+		<center id="center">
+			<div id="load-wrapper">
+				<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+			</div>
+		</center>
+			<div id="index">
+				<section id="main0">
+					<div class="main-wrapper0">
+						<div class="main-wrapper1">
+							<div id="logo-wrapper">
+								<img src="img/logo.png" />
+							</div>
+							<p id="logo-name">VEENDAM<small>RP</small></p>
+							<div class="menu">
+								<div class="menu-btn" onclick="navigate('#info0')">INFO</div>
+								<div class="menu-btn-divider"></div>
+								
+								<div class="menu-btn" onclick="navigate('#banen0')">SOLLICITEREN</div>
+								<div class="menu-btn-divider"></div>
+								
+								<div class="menu-btn" onclick="navigate('#contact0')">CONTACT</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			<center id="center">
+				<section id="info0">
+					<div class="over">
+						<p class="titel">Over ons</p>
+						<p class="tekst">
+							VeendamRP&trade; is een uitgebreide FiveM&trade; roleplay server voorzien van vele
+							realistische toevoegingen zoals een breed assortiment van banen,
+							handgemaakte commando's, realistische auto verlichtingen en meer.
+							</br></br>
+							Het staff-team achter VeendamRP&trade; wil jouw roleplay ervaring zo perfect
+							mogelijk laten verlopen. VeendamRP&trade; bied daarom realistische prijzen, een
+							vriendelijk staff-team en een handige discord server waar je goede support
+							vind.
+							</br></br>
+							Bekijk de video voor meer uitleg.
+						</p>
+					</div>
+					<div class="cvideo-player-wrapper">
+						<iframe src="https://www.youtube-nocookie.com/embed/cA-AT80GjxA?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="activityfeed">
+						<ol class="activity-feed">
+							<p class="activity-title">Activiteiten</p>
+							<li class="feed-item">
+								<time class="date">11 mei 2019</time>
+								<span class="text">Meer ambulance kleding variaties toegevoegd.</span>
+							</li>
+							<li class="feed-item">
+								<time class="date">10 mei 2019</time>
+								<span class="text">ELS systeem gemaakt.</span>
+							</li>
+						</ol>
+					</div>
+				</section>
+				<section id="banen0">
+					<p class="titel">Solliciteer</p>
+					<p class="tekst">
+						Maak deel uit van VeendamRP&trade;
+					</p>
+					<div class="jobbox-wrapper">
+						<!--<div class="jobbox" onclick="showjobform('jobs');">
+							<i class="fas fa-id-card"></i>
+							<div class="jobbox-name">SOLLICITEREN</div>
+						</div>
+						<div class="jobbox">
+							<i class="fas fa-comment-medical"></i>
+							<div class="jobbox-name">SUGGESTIES</div>
+						</div>
+						<div class="jobbox">
+							<i class="fas fa-comment-slash"></i>
+							<div class="jobbox-name">KLACHTEN</div>
+						</div>-->
+						<div id="solliciteren">
+							<!--<div class="close"><i class="fas fa-window-close" onclick="closejobform();"></i><p>klik om te sluiten</p></div>-->
+							<div id="jobbox-form">
+								<div class="jobbox-form-option" onclick="openJobWindow('politie');">
+									<div class="imgph" id="jobbox-politie">
+										<p class="titel">Politie</p>
+									</div>
+								</div>
+								<div class="jobbox-form-option" onclick="openJobWindow('ambulance');">
+									<div class="imgph" id="jobbox-ambulance">
+										<p class="titel">Ambulance</p>
+									</div>
+								</div>
+								<div class="jobbox-form-option" onclick="openJobWindow('brandweer');">
+									<div class="imgph" id="jobbox-brandweer">
+										<p class="titel">Brandweer</p>
+									</div>
+								</div>
+								<div class="jobbox-form-option" onclick="openJobWindow('marechaussee');">
+									<div class="imgph" id="jobbox-marchaussee">
+										<p class="titel">Marechaussee</p>
+									</div>
+								</div>
+								<div class="jobbox-form-option" onclick="openJobWindow('meldkamer');">
+									<div class="imgph" id="jobbox-meldkamer">
+										<p class="titel">Meldkamer</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</center>
+	</body>
+	
+</html>
+
+<!--<script src="js/module_applycolorsettings.js"></script>-->
+<script src="js/module_loader.js"></script>
+<script>
+function navigate(url) {
+	window.location.href = url;
+}
+function openJobWindow(jobtype) {
+	window.open('jobwindows/'+jobtype+'.html', 'newwindow', 'width=500,height=800');
+}
+
+//window.onload = getColorMode();
+</script>

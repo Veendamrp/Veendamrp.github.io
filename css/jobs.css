@@ -1,0 +1,64 @@
+#jobbox-politie {
+	background: url('../img/thumbnails/gta5rp_0.png');
+	background-size: 100%;
+	transition: all 300ms ease;
+}
+
+.jobbox-form-option:hover .imgph#jobbox-politie {
+	background: url('../img/thumbnails/gta5rp_0.png');
+	background-size: 110%;
+	background-position: -20px -12px;
+	transition: all 300ms ease;
+}
+
+#jobbox-ambulance {
+	background: url('../img/thumbnails/gta5rp_0.png');
+	background-size: 100%;
+	transition: all 300ms ease;
+}
+
+.jobbox-form-option:hover .imgph#jobbox-ambulance {
+	background: url('../img/thumbnails/gta5rp_0.png');
+	background-size: 110%;
+	background-position: -20px -12px;
+	transition: all 300ms ease;
+}
+
+#jobbox-brandweer {
+	background: url('../img/thumbnails/gta5rp_0.png');
+	background-size: 100%;
+	transition: all 300ms ease;
+}
+
+.jobbox-form-option:hover .imgph#jobbox-brandweer {
+	background: url('../img/thumbnails/gta5rp_0.png');
+	background-size: 110%;
+	background-position: -20px -12px;
+	transition: all 300ms ease;
+}
+
+#jobbox-marchaussee {
+	background: url('../img/thumbnails/gta5rp_0.png');
+	background-size: 100%;
+	transition: all 300ms ease;
+}
+
+.jobbox-form-option:hover .imgph#jobbox-marchaussee {
+	background: url('../img/thumbnails/gta5rp_0.png');
+	background-size: 110%;
+	background-position: -20px -12px;
+	transition: all 300ms ease;
+}
+
+#jobbox-meldkamer {
+	background: url('../img/thumbnails/gta5rp_0.png');
+	background-size: 100%;
+	transition: all 300ms ease;
+}
+
+.jobbox-form-option:hover .imgph#jobbox-meldkamer {
+	background: url('../img/thumbnails/gta5rp_0.png');
+	background-size: 110%;
+	background-position: -20px -12px;
+	transition: all 300ms ease;
+}
