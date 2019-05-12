@@ -5,7 +5,7 @@
 		<link id="css" href="css/loader.css" rel="stylesheet" type="text/css">
 		<link id="css" href="css/jobs.css" rel="stylesheet" type="text/css">
 		<link id="css" href="css/activityfeed.css" rel="stylesheet" type="text/css">
-		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,16 +34,11 @@
 							<div id="logo-wrapper">
 								<img src="img/logo.png" />
 							</div>
-							<p id="logo-name">VEENDAM<small>RP</small></p>
-							<div class="menu">
-								<div class="menu-btn" onclick="navigate('#info0')">INFO</div>
-								<div class="menu-btn-divider"></div>
-								
-								<div class="menu-btn" onclick="navigate('#banen0')">SOLLICITEREN</div>
-								<div class="menu-btn-divider"></div>
-								
-								<div class="menu-btn" onclick="navigate('#contact0')">CONTACT</div>
-							</div>
+						</div>
+						<p id="logo-name">VEENDAM<small>RP</small></p>
+						<div class="menu">
+							<div class="menu-btn" onclick="navigate('#info0')">INFORMATIE</div>
+							<div class="menu-btn" onclick="navigate('#banen0')">SOLLICITEER</div>
 						</div>
 					</div>
 				</section>
@@ -65,18 +60,27 @@
 						</p>
 					</div>
 					<div class="cvideo-player-wrapper">
-						<iframe src="https://www.youtube-nocookie.com/embed/cA-AT80GjxA?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe src="https://www.youtube-nocookie.com/embed/vU37zirf69w?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 					<div class="activityfeed">
 						<ol class="activity-feed">
 							<p class="activity-title">Activiteiten</p>
+							
+							<div class="colortag" importance-level="0" title="Update / Bericht"></div>
+							<div class="colortag" importance-level="1" title="Waarschuwing"></div>
+							<div class="colortag" importance-level="2" title="Crash melding"></div>
+							<div class="colortag" importance-level="3" title="Mededeling"></div>
+							<small id="version"><b>Versie v1.02</b></small>
+							
 							<li class="feed-item">
-								<time class="date">11 mei 2019</time>
-								<span class="text">Meer ambulance kleding variaties toegevoegd.</span>
+								<img class="feed-user" src="img/users/Mexury.png" title="Geplaatst door Mexury" importance-level="0">
+								<time class="date">11 mei 2019</time></br>
+								<span class="text">Uitleg video geupload.</span>
 							</li>
 							<li class="feed-item">
-								<time class="date">10 mei 2019</time>
-								<span class="text">ELS systeem gemaakt.</span>
+								<img class="feed-user" src="img/users/Mexury.png" title="Geplaatst door Mexury" importance-level="3">
+								<time class="date">10 mei 2019</time></br>
+								<span class="text">Eerste website versie publiek gemaakt.</span>
 							</li>
 						</ol>
 					</div>
@@ -84,7 +88,8 @@
 				<section id="banen0">
 					<p class="titel">Solliciteer</p>
 					<p class="tekst">
-						Maak deel uit van VeendamRP&trade;
+						Maak deel uit van VeendamRP&trade;</br>
+						<small>(Foto's worden nog vervangen.)</small>
 					</p>
 					<div class="jobbox-wrapper">
 						<!--<div class="jobbox" onclick="showjobform('jobs');">
@@ -130,9 +135,16 @@
 							</div>
 						</div>
 					</div>
-				</section>
-			</div>
-		</center>
+				</section>	
+			</center>
+			<center>
+				<div class="footer">
+					<p id="italic">&copy; Copyright 2019 &nbsp;&nbsp;<r>VeendamRP</r></p>
+					<p id="line2">All rights reserved. &nbsp;&nbsp;Mogelijk gemaakt door &nbsp;&nbsp;<a onclick="navigate('https://mexury.github.io/');">Mexury</a> & <a onclick="navigate('https://github.com/');">Github</a>.</p></br>
+					<p id="line2">LINKS: &nbsp;&nbsp;<a onclick="navigate('https://discord.gg/fVk5Ucj');">Discord</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a onclick="navigate('https://github.com/Veendamrp/Veendamrp.github.io');">Source Code</a></p>
+				</div>
+			</center>
+		</div>
 	</body>
 	
 </html>
@@ -147,5 +159,43 @@ function openJobWindow(jobtype) {
 	window.open('jobwindows/'+jobtype+'.html', 'newwindow', 'width=500,height=800');
 }
 
-//window.onload = getColorMode();
+function setupPage() {
+	var users = document.getElementsByClassName("feed-user");
+	var i;
+	for (i = 0; i < users.length; i++) {
+		var importance = users[i].getAttribute('importance-level');
+		if (importance == 0) { // grey   [update/bericht]
+			users[i].style.boxShadow = "0px 0px 0px 1.5px #8c96a3";
+		}
+		if (importance == 1) { // orange [waarschuwing]
+			users[i].style.boxShadow = "0px 0px 0px 1.5px #ef7137";
+		}
+		if (importance == 2) { // red    [crash]
+			users[i].style.boxShadow = "0px 0px 0px 1.5px #e52b2b";
+		}
+		if (importance == 3) { // blue   [mededeling]
+			users[i].style.boxShadow = "0px 0px 0px 1.5px #3780ef";
+		}
+	}
+	
+	var ctags = document.getElementsByClassName("colortag");
+	var ii;
+	for (ii = 0; ii < ctags.length; ii++) {
+		var importance = ctags[ii].getAttribute('importance-level');
+		if (importance == 0) { // grey   [update/bericht]
+			ctags[ii].style.background = "#8c96a3";
+		}
+		if (importance == 1) { // orange [waarschuwing]
+			ctags[ii].style.background = "#ef7137";
+		}
+		if (importance == 2) { // red    [crash]
+			ctags[ii].style.background = "#e52b2b";
+		}
+		if (importance == 3) { // blue   [mededeling]
+			ctags[ii].style.background = "#3780ef";
+		}
+	}
+}
+
+window.onload = setupPage();
 </script>
