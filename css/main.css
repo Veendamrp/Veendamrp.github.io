@@ -27,6 +27,7 @@ section#main0 {
 	background: rgb(255,80,80);
 	background: linear-gradient(90deg, rgba(255,80,80,1) 0%, rgba(144,0,0,1) 100%);	
 }
+
 section#info0 {
 	height: auto;
 	padding-bottom: 50px;
@@ -112,8 +113,7 @@ section#banen0 > .tekst {
 	background: #ffffff;
 	padding-left: 14px;
 	padding-right: 14px;
-	margin-left: 3px;
-	margin-right: 3px;
+	margin: 5px;
 }
 .menu-btn:hover {
 	transition: all 300ms ease;
